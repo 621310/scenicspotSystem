@@ -65,7 +65,7 @@
 
             },
             onLogin2() {
-                this.$router.push({name: 'scenicspotHome'})
+                // this.$router.push({name: 'scenicspotHome'})
             }
         }
     }

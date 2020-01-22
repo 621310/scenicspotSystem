@@ -1,30 +1,16 @@
 <template>
     <div class="touristsHome">
-        <el-header><h1>欢迎！</h1></el-header>
-        <el-row class="main">
-            <el-col :span="3">
-                <el-menu :default-active="this.$router.path" class="el-menu-vertical-demo" @open="handleOpen"
-                         @close="handleClose" router>
-                    <el-menu-item index="/scenicList">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">首页</span>
-                    </el-menu-item>
-                    <el-menu-item index="/MyOrder">
-                        <i class="el-icon-s-order"></i>
-                        <span slot="title">我的订单</span>
-                    </el-menu-item>
-                    <el-menu-item index="/MyMessage">
-                        <i class="el-icon-user-solid"></i>
-                        <span slot="title">我的信息</span>
-                    </el-menu-item>
-                </el-menu>
-            </el-col>
-            <el-col :span="21">
+        <el-menu :default-active="activeIndex"router class="el-menu-demo" mode="horizontal"
+                @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+            <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
+                {{ item.navItem }}
+            </el-menu-item>
+        </el-menu>
+
                 <transition name="fade" mode="in-out">
                     <router-view></router-view>
                 </transition>
-            </el-col>
-        </el-row>
+
     </div>
 </template>
 
@@ -33,18 +19,22 @@
         name: 'touristsHome',
         components: {},
         data() {
-            return {}
+            return {
+                activeIndex: '/scenicList',
+                navList:[
+                    {name:'/scenicList',navItem:'首页'},
+                    {name:'/MyOrder',navItem:'我的订单'},
+                    {name:'/MyMessage',navItem:'个人中心'}
+                ]
+            }
         },
         mounted() {
 
         },
         methods: {
-            handleOpen(key, keyPath) {
+            handleSelect(key, keyPath) {
                 console.log(key, keyPath);
-            },
-            handleClose(key, keyPath) {
-                console.log(key, keyPath);
-            },
+            }
         }
     }
 </script>

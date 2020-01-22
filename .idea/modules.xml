@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/scenicspotSystem.iml" filepath="$PROJECT_DIR$/.idea/scenicspotSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-scenicspot/service-scenicspot.iml" filepath="$PROJECT_DIR$/service-scenicspot/service-scenicspot.iml" />
+    </modules>
+  </component>
+</project>

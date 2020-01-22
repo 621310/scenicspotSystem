@@ -1,16 +1,37 @@
 <template>
-    <div>
-        <el-carousel indicator-position="outside">
-            <el-carousel-item v-for="item in 4" :key="item">
-                <h3>{{ item }}</h3>
-            </el-carousel-item>
-        </el-carousel>
+    <div class="box">
+        <el-container>
+            <card></card>
+            <el-main>
+                <el-row>
+                </el-row>
+            </el-main>
+        </el-container>
+
     </div>
 </template>
 
 <script>
+    import Card from "../../components/card";
+
+
     export default {
-        name: "scenicDeatail"
+        name: "scenicDeatail",
+        components: {
+            Card,
+
+        },
+        data(){
+            return{
+                swiperOption:[],
+                bannerList:[],
+            }
+        },
+        methods:{
+            handleSwiperClick(){
+
+            },
+        }
     }
 </script>
 
@@ -32,5 +53,8 @@
 
     .el-carousel__item:nth-child(2n+1) {
         background-color: #d3dce6;
+    }
+    .box{
+        margin: 0.5rem;
     }
 </style>
