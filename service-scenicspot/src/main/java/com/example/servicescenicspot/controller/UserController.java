@@ -16,6 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+//    @RequestMapping(value="/api/getUserInfo")
     @RequestMapping(value="/getUserInfo")
     public Map<String,Object> getUserInfo(@RequestBody UserInfo userInfo){
         Map<String,Object> result = new HashMap<>();

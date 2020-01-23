@@ -28,9 +28,7 @@
             }
         },
         methods:{
-            handleSwiperClick(){
 
-            },
         }
     }
 </script>

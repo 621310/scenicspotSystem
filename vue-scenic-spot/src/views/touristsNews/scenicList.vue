@@ -4,15 +4,15 @@
             <card></card>
             <el-main>
                 <el-row>
-                    <el-col class="scenicItem" :span="8" v-for="(o, index) in 6" :key="o" :offset="index > 0 ? 0 : 0">
+                    <el-col class="scenicItem" :span="8" v-for="(item, index) in scenicList" :key="item.id" :offset="index > 0 ? 0 : 0">
                         <el-card shadow="hover" :body-style="{ padding: '0px' }">
                             <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
                                  class="image">
                             <div class="card_bottom" @click="goScenicDetail">
-                                <div><span>武汉市黄鹤楼</span><span class="price oldprice">￥998</span><span class="price">￥198</span>
+                                <div><span>{{item.name}}</span><span class="price oldprice">￥{{item.oldTicketsPrice}}</span><span class="price">￥{{item.ticketsPrice}}</span>
                                 </div>
                                 <div class="bottom clearfix">
-                                    <time class="time">武汉市-武昌区-蛇山西山坡特1号</time>
+                                    <time class="time">{{item.address}}</time>
                                     <el-button type="text" class="button">查看详情</el-button>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@
         },
         data() {
             return {
-
+                scenicList:[],
             };
         },
         mounted() {
-
+            this.getInfo();
         },
 
         methods:{
@@ -54,6 +54,19 @@
                 console.log("dfsa")
                 this.$router.push({name: 'scenicDeatail'})
             },
+            getInfo(){
+                this.$axios({
+                    method: 'post',              //交互方式
+                    // url: '/api/getUserInfo',        //url地址
+                    url: '/api/getScenicSpotList',
+                    data: {}             //需要交互的数据
+                }).then((res) => {
+                    console.log(res)
+                    this.scenicList = res.data.data
+                }).catch((error) => {
+                    console.log(error)              //失败   打印异常
+                })
+            }
         }
     }
 </script>
