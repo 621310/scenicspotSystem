@@ -43,7 +43,7 @@
                     ],
                 }
             }
-        },
+    },
         methods: {
             onLogin() {
                 this.$axios({
@@ -53,8 +53,10 @@
                     data: this.form             //需要交互的数据
                 }).then((res) => {
                     console.log(res)
-                    if(res.data.code === '200'){
+                    if(res.data.code != '201'){
                         this.$message({  showClose: true,  message: '登陆成功',  type: 'success' });
+                        sessionStorage.setItem("token",res.data.data.token)
+                        console.log(sessionStorage.getItem('token'))
                         this.$router.push({name: 'touristsHome'})
                     }else{
                         this.$message({  showClose: true,  message: '账号或密码错误！',  type: 'error' });
@@ -66,6 +68,7 @@
             },
             onLogin2() {
                 // this.$router.push({name: 'scenicspotHome'})
+
             }
         }
     }

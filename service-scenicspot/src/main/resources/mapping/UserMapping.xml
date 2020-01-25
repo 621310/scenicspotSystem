@@ -7,4 +7,9 @@
         where phone=#{userInfo.phone}
         and password=#{userInfo.password}
     </select>
+
+    <select id="getUserInfoByUserid" resultType="com.example.servicescenicspot.entity.UserInfo">
+         select * from `user`
+        where id=#{userid}
+    </select>
 </mapper>

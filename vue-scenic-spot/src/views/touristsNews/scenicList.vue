@@ -55,17 +55,33 @@
                 this.$router.push({name: 'scenicDeatail'})
             },
             getInfo(){
-                this.$axios({
-                    method: 'post',              //交互方式
-                    // url: '/api/getUserInfo',        //url地址
-                    url: '/api/getScenicSpotList',
-                    data: {}             //需要交互的数据
-                }).then((res) => {
-                    console.log(res)
-                    this.scenicList = res.data.data
-                }).catch((error) => {
-                    console.log(error)              //失败   打印异常
-                })
+                // this.$axios({
+                //     method: 'post',              //交互方式
+                //     // url: '/api/getUserInfo',        //url地址
+                //     url: '/api/getScenicSpotList',
+                //     data: {}             //需要交互的数据
+                // }).then((res) => {
+                //     console.log(res)
+                //     this.scenicList = res.data.data
+                // }).catch((error) => {
+                //     console.log(error)              //失败   打印异常
+                // })
+                //data是一个对象（传给后台的参数）
+                this.$post('/api/getScenicSpotList',{})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        if (response==null || response==''){
+                            this.$router.push({name: 'Login'})
+                            this.$message({  showClose: true,  message: '还没有登陆哦',  type: 'error' });
+                        } else{
+                            this.scenicList = response.data
+                        }
+
+
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             }
         }
     }

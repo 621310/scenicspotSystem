@@ -8,4 +8,6 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper {
 
     UserInfo getUserInfo(@Param("userInfo") UserInfo userInfo);
+
+    UserInfo getUserInfoByUserid(@Param("userid")String userid);
 }

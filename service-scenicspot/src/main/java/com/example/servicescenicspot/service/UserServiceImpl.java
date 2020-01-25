@@ -21,4 +21,10 @@ public class UserServiceImpl  extends BaseService implements UserService {
         }
         return userInfo1;
     }
+
+    @Override
+    public UserInfo getUserInfoByUserid(String userid) {
+        UserInfo userInfo = userMapper.getUserInfoByUserid(userid);
+        return userInfo;
+    }
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.servicescenicspot.util.JwtUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,9 @@ public class UserController {
         if(userInfo1 == null){
             Constants.getErrMsg(result,"201");
         }else{
-            Constants.getSuccMsg(result,"200");
+            String token = JwtUtil.CreateToken(userInfo1.getId(),"","","");
+            userInfo1.setToken(token);
+            Constants.getSuccMsg(result,userInfo1);
         }
         return  result;
     }
