@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+//@RequestMapping(value="/api")
 public class ScenicController {
 
     @Autowired

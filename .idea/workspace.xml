@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c27df59-2a01-44e6-8402-7ef00a5c8832" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-scenic-spot/src/utils/request.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/ServiceScenicspotApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/ServiceScenicspotApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/mapping/UserMapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/mapping/UserMapping.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-scenic-spot/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-scenic-spot/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-scenic-spot/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-scenic-spot/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/MyOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/MyOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/scenicList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/scenicList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/css/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-scenicspot/src/main/resources/static/assets/js/chunk-vendors.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/service-scenicspot/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,22 +26,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="256">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,75 +38,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/BaseService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="10" column="51" lean-forward="true" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="26" column="67" lean-forward="true" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/mapper/UserMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="9" selection-start-line="8" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/resources/mapping/UserMapping.xml">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/JwtUtil.java">
+        <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-scenic-spot/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -160,20 +106,16 @@
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/components/swiper.vue" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/babel.config.js" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/scenicDeatail.vue" />
-        <option value="$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/entity/Scenic.java" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicService.java" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/resources/mapping/ScenicMapping.xml" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/mapper/ScenicMapper.java" />
-        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/MyOrder.vue" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/JwtUtil.java" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/entity/UserInfo.java" />
-        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/util/request.js" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/main.js" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/ServiceScenicspotApplication.java" />
-        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/utils/request.js" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/views/touristsNews/scenicList.vue" />
         <option value="$PROJECT_DIR$/vue-scenic-spot/src/views/Login.vue" />
@@ -185,6 +127,10 @@
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/util/util.java" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java" />
         <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java" />
+        <option value="$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java" />
+        <option value="$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -218,7 +164,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-265" />
     <option name="y" value="30" />
     <option name="width" value="1550" />
@@ -229,8 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,16 +225,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="servicescenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servicescenicspot" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,84 +233,19 @@
               <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servicescenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servicescenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servicescenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="service-scenicspot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
               <item name="vue-scenic-spot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-scenic-spot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-scenic-spot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-scenic-spot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="scenicspotSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="scenicspotSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-scenic-spot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="touristsNews" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceScenicspotApplication">
+  <component name="RunManager" selected="npm.build">
     <configuration name="ServiceScenicspotApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="service-scenicspot" />
       <extension name="coverage">
@@ -445,8 +314,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ServiceScenicspotApplication" />
         <item itemvalue="npm.build" />
+        <item itemvalue="Spring Boot.ServiceScenicspotApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -477,7 +346,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33933000" />
+    <option name="totallyTimeSpent" value="35318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -490,9 +359,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25067025" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -502,23 +370,23 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26062322" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18696883" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.3286119" />
       <window_info anchor="bottom" id="Spring" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.49291784" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22096318" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.26062322" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="14" visible="true" weight="0.31586403" />
+      <window_info anchor="bottom" id="Debug" order="14" weight="0.31586403" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.14544237" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.1541555" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="SciView" order="6" />
@@ -530,18 +398,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -593,9 +449,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue-scenic-spot/src/components/swiper.vue" />
-    <entry file="file://$PROJECT_DIR$/vue-scenic-spot/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue-scenic-spot/src/components/card.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
@@ -658,16 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,33 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/ServiceScenicspotApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="64" lean-forward="true" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="20" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/aboutjava/apache-maven-3.6.1/repository/org/springframework/spring-webmvc/4.3.8.RELEASE/spring-webmvc-4.3.8.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -795,16 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="58" column="68" lean-forward="true" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -857,13 +663,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/ExecuteFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/ExecuteFactory.java" />
     <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/BaseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -878,10 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/ServiceScenicspotApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -890,8 +690,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/service/ScenicServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        <state relative-caret-position="253">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/LoginHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/component/InterceptorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-scenic-spot/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/ScenicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-scenicspot/src/main/java/com/example/servicescenicspot/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
