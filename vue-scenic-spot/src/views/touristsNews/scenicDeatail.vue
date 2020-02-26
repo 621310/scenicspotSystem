@@ -3,7 +3,7 @@
         <el-container>
             <card></card>
             <el-main>
-                <el-row>
+                <el-row class="bgcolor">
                     <el-col :span="12">
                     <el-carousel>
                         <el-carousel-item v-for="item in 4" :key="item">
@@ -12,31 +12,32 @@
                         </el-carousel-item>
                     </el-carousel>
                     </el-col>
-                    <el-col :offset="1" :span="8">
-                        <h1>武汉市黄鹤楼景区</h1>
-                        <div class="rightItem"><span>景区地址：</span>武汉市-武昌区-蛇山西山坡特1号</div>
-                        <div class="rightItem"><span>开放时间：</span>全年8:00 - 24:00</div>
-                        <div class="rightItem"><span>联系电话：</span>100000000000</div>
-                        <div class="rightItem"><span>景区特色：</span>分开发送接口和发电机发电发来的环境负荷富简富士康好看</div>
+                    <el-col  :offset="1" :span="8">
+                        <h1>{{scenicDetail.name}}</h1>
+                        <div class="rightItem"><span>景区地址：</span>{{scenicDetail.address}}</div>
+                        <div class="rightItem"><span>开放时间：</span>{{scenicDetail.openTime}}</div>
+                        <div class="rightItem"><span>联系电话：</span>{{scenicDetail.phone}}</div>
+                        <div class="rightItem"><span>景区特色：</span>{{scenicDetail.scenicfeatures}}</div>
                     </el-col>
                 </el-row>
                 <el-row>
-                    <el-col :span="6">
-                        <el-card class="box-card">
-                            <div slot="header" class="clearfix">
-                                <span>景点简介</span>
-                            </div>
-                            <div style="color: #475669">
-                                黄鹤楼位于湖北省武汉市长江南岸的武昌蛇山之巅，濒临万里长江，是国家5A级旅游景区，“江南三大名楼”之一，自古享有“天下江山第一楼“和”天下绝景“之称。黄鹤楼是武汉市标志性建筑，与晴川阁、古琴台并称“武汉三大名胜”。 [1-2]
-                                黄鹤楼始建于三国时代吴黄武二年（公元223年），三国时期该楼只是夏口城一角瞭望守戍的“军事楼”，晋灭东吴以后，三国归于一统，该楼在失去其军事价值的同时，随着江夏城地发展，逐步演变成为官商行旅“游必于是”、“宴必于是”的观赏楼。
-                            </div>
-                        </el-card>
+                    <el-col :span="24">
+                        <el-collapse v-model="activeName" accordion>
+                            <el-collapse-item title="景区简介" name="1">
+                                <div>{{scenicDetail.scenicInfo}}</div>
+                            </el-collapse-item>
+                            <el-collapse-item title="反馈 Feedback" name="2">
+                                <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
+                                <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+                            </el-collapse-item>
+                        </el-collapse>
                     </el-col>
-                    <el-col :offset="1" :span="17">
-                        <el-table :data="tableData" style="width: 100%">
-                            <el-table-column prop="date" label="名称" width="280"></el-table-column>
-                            <el-table-column prop="name" label="价格" width="100"></el-table-column>
-                            <el-table-column label="选择日期" width="240">
+
+                    <el-col  :span="24">
+                        <el-table :data="tableData" border style="width: 100%;margin-top: 1rem">
+                            <el-table-column prop="date" label="名称" width="500"></el-table-column>
+                            <el-table-column prop="name" label="价格"  width="100"></el-table-column>
+                            <el-table-column label="选择日期" >
                                 <template slot-scope="scope">
                                     <div class="block">
                                         <el-date-picker v-model="orderForm.date" type="date"
@@ -95,11 +96,28 @@
                 orderForm:{
                     date:'',
                     num:0,
-                }
+                },
+                scenicId:'',
+                scenicDetail:{},
+                activeName: ''
             }
         },
+        mounted(){
+            this.scenicId = sessionStorage.getItem("scenicId")
+            console.log(this.scenicId)
+            this.getInfo()
+        },
         methods:{
-
+            getInfo(){
+                this.$post('/api/getScenicDetail',{id:this.scenicId})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        this.scenicDetail = response.data
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
+            }
         }
     }
 </script>
@@ -125,7 +143,9 @@
         background-color: #d3dce6;
     }
     .box{
-        margin: 0.5rem;
+        /*margin: 0.5rem;*/
+        padding: 0.5rem;
+        background-color: #e8e8e8;
     }
     .image {
         width: 100%;
@@ -145,4 +165,11 @@
     h1{
         margin-bottom: 1.5rem;
     }
+    .bgcolor{
+        background-color: #fff;
+    }
+    .el-main{
+        padding-top: 0;
+    }
+
 </style>

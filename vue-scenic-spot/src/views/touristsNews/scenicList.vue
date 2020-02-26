@@ -8,12 +8,12 @@
                         <el-card shadow="hover" :body-style="{ padding: '0px' }">
                             <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
                                  class="image">
-                            <div class="card_bottom" @click="goScenicDetail">
+                            <div class="card_bottom" @click="goScenicDetail(item.id)">
                                 <div><span>{{item.name}}</span><span class="price oldprice">￥{{item.oldTicketsPrice}}</span><span class="price">￥{{item.ticketsPrice}}</span>
                                 </div>
                                 <div class="bottom clearfix">
-                                    <time class="time">{{item.address}}</time>
-                                    <el-button type="text" class="button">查看详情</el-button>
+                                    <div class="time">{{item.address}}</div>
+                                    <el-button type="text" style="margin-top: 0.5rem" class="button">查看详情</el-button>
                                 </div>
                             </div>
                         </el-card>
@@ -50,8 +50,8 @@
         },
 
         methods:{
-            goScenicDetail(){
-                console.log("dfsa")
+            goScenicDetail(id){
+                sessionStorage.setItem("scenicId",id)
                 this.$router.push({name: 'scenicDeatail'})
             },
             getInfo(){
@@ -102,6 +102,9 @@
     .time {
         font-size: 13px;
         color: #999;
+        overflow: hidden; /*溢出隐藏*/
+        text-overflow: ellipsis; /*以省略号...显示*/
+        white-space: nowrap; /*强制不换行*/
     }
 
     .bottom {
@@ -121,7 +124,7 @@
 
     .image {
         width: 100%;
-        height: 15rem;
+        height: 13rem;
         display: block;
     }
 

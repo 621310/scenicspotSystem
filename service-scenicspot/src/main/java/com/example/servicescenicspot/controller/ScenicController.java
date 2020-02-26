@@ -1,11 +1,11 @@
 package com.example.servicescenicspot.controller;
 
 import com.example.servicescenicspot.entity.Scenic;
+import com.example.servicescenicspot.entity.ScenicDetail;
 import com.example.servicescenicspot.service.ScenicService;
 import com.example.servicescenicspot.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +23,15 @@ public class ScenicController {
         Map<String,Object> result = new HashMap<>();
         List<Scenic> list = scenicService.getScenicList();
         Constants.getErrMsg(result,list);
+        return result;
+    }
+
+    @RequestMapping(value="/getScenicDetail")
+    public Map<String,Object> getScenicDetail(@RequestBody Map<String,String> param){
+        Map<String,Object> result = new HashMap<>();
+        String scenicId = param.get("id");
+        ScenicDetail scenicDetail = scenicService.getScenicDetail(scenicId);
+        Constants.getErrMsg(result,scenicDetail);
         return result;
     }
 }

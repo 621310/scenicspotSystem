@@ -5,4 +5,33 @@
     <select id="getScenicList" resultType="com.example.servicescenicspot.entity.Scenic">
         select * from scenic_spot
     </select>
+
+    <resultMap id="scenicDetailMap" type="com.example.servicescenicspot.entity.ScenicDetail">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="openTime" column="openTime" jdbcType="VARCHAR"/>
+        <result property="scenicInfo" column="scenicInfo" jdbcType="VARCHAR"/>
+        <result property="scenicfeatures" column="scenicfeatures" jdbcType="VARCHAR"/>
+        <collection property="scenicProjectsList" ofType="com.example.servicescenicspot.entity.ScenicProject"
+                    select="selectScenicProject"
+                    column="{scenicId=id}"></collection>
+<!--        <collection property="scenicPicList" ofType="com.example.servicescenicspot.entity.ScenicPic"-->
+<!--                    select="selectScenicPic"-->
+<!--                    column="{otherId=id}"></collection>-->
+    </resultMap>
+
+    <select id="getScenicDetail" resultMap="scenicDetailMap" parameterType="string">
+        select `id`,`name`,address,phone,openTime,scenicInfo,scenicfeatures from scenic_spot
+        where id = #{id}
+    </select>
+
+    <select id="selectScenicProject" resultType="com.example.servicescenicspot.entity.ScenicProject">
+        select `id`,`name`,projectPrice from scenic_project where scenicId = #{scenicId}
+    </select>
+
+<!--    <select id="scenicPicList" resultType="com.example.servicescenicspot.entity.ScenicPic">-->
+<!--        select `id`,pic from pic where otherId = #{otherId}-->
+<!--    </select>-->
 </mapper>
