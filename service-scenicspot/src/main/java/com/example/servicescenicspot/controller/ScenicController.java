@@ -2,6 +2,7 @@ package com.example.servicescenicspot.controller;
 
 import com.example.servicescenicspot.entity.Scenic;
 import com.example.servicescenicspot.entity.ScenicDetail;
+import com.example.servicescenicspot.entity.ScenicPic;
 import com.example.servicescenicspot.service.ScenicService;
 import com.example.servicescenicspot.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-//@RequestMapping(value="/api")
+//@RequestMapping(value="/api")  //部署加上
 public class ScenicController {
 
     @Autowired
@@ -31,6 +32,8 @@ public class ScenicController {
         Map<String,Object> result = new HashMap<>();
         String scenicId = param.get("id");
         ScenicDetail scenicDetail = scenicService.getScenicDetail(scenicId);
+        List<ScenicPic> scenicPics = scenicService.getScenicPic(scenicId);
+        scenicDetail.setScenicPicList(scenicPics);
         Constants.getErrMsg(result,scenicDetail);
         return result;
     }

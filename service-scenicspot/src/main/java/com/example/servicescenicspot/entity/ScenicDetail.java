@@ -14,8 +14,18 @@ public class ScenicDetail {
     private String scenicInfo;
     //景区特色
     private String scenicfeatures;
+    private String precautions;
     private List<ScenicProject> scenicProjectsList;
     private List<ScenicPic> scenicPicList;
+
+
+    public String getPrecautions() {
+        return precautions;
+    }
+
+    public void setPrecautions(String precautions) {
+        this.precautions = precautions;
+    }
 
     public String getId() {
         return id;

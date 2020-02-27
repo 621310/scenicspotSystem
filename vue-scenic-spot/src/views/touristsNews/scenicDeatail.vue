@@ -6,9 +6,8 @@
                 <el-row class="bgcolor">
                     <el-col :span="12">
                     <el-carousel>
-                        <el-carousel-item v-for="item in 4" :key="item">
-                            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
-                                 class="image">
+                        <el-carousel-item v-for="item in scenicPicList" :key="item.id">
+                            <img :src="item.pic" class="image">
                         </el-carousel-item>
                     </el-carousel>
                     </el-col>
@@ -26,35 +25,34 @@
                             <el-collapse-item title="景区简介" name="1">
                                 <div>{{scenicDetail.scenicInfo}}</div>
                             </el-collapse-item>
-                            <el-collapse-item title="反馈 Feedback" name="2">
-                                <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
-                                <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+                            <el-collapse-item title="注意事项" name="2">
+                                <div>{{scenicDetail.precautions}}</div>
                             </el-collapse-item>
                         </el-collapse>
                     </el-col>
 
                     <el-col  :span="24">
-                        <el-table :data="tableData" border style="width: 100%;margin-top: 1rem">
-                            <el-table-column prop="date" label="名称" width="500"></el-table-column>
-                            <el-table-column prop="name" label="价格"  width="100"></el-table-column>
-                            <el-table-column label="选择日期" >
+                        <el-table :data="scenicDetail.scenicProjectsList" border style="width: 100%;margin-top: 1rem">
+                            <el-table-column prop="name" label="名称" width="500"></el-table-column>
+                            <el-table-column prop="projectPrice" label="价格(元)"  width="100"></el-table-column>
+<!--                            <el-table-column label="选择日期" width="300" prop="date">-->
+<!--                                <template slot-scope="scope">-->
+<!--                                    <div class="block">-->
+<!--                                        <el-date-picker v-model="orderForm.date" type="date"-->
+<!--                                                        size="small"-->
+<!--                                                        placeholder="选择日期">-->
+<!--                                        </el-date-picker>-->
+<!--                                    </div>-->
+<!--                                </template>-->
+<!--                            </el-table-column>-->
+<!--                            <el-table-column label="数量">-->
+<!--                                <template slot-scope="scope">-->
+<!--                                    <el-input-number size="small" v-model="orderForm.num" :min="1" :max="6" label="描述文字"></el-input-number>-->
+<!--                                </template>-->
+<!--                            </el-table-column>-->
+                            <el-table-column fixed="right" label="操作">
                                 <template slot-scope="scope">
-                                    <div class="block">
-                                        <el-date-picker v-model="orderForm.date" type="date"
-                                                        size="small"
-                                                        placeholder="选择日期">
-                                        </el-date-picker>
-                                    </div>
-                                </template>
-                            </el-table-column>
-                            <el-table-column label="数量">
-                                <template slot-scope="scope">
-                                    <el-input-number size="small" v-model="orderForm.num" :min="1" :max="6" label="描述文字"></el-input-number>
-                                </template>
-                            </el-table-column>
-                            <el-table-column fixed="right" label="操作" width="100">
-                                <template slot-scope="scope">
-                                    <el-button type="text" size="small">添加至我的订单</el-button>
+                                    <el-button type="text" @click="addOrder(scope.row)" size="small">添加至我的订单</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -78,21 +76,9 @@
         },
         data(){
             return{
+                scenicPicList:[],
                 swiperOption:[],
                 bannerList:[],
-                tableData: [{
-                    date: '武汉市黄鹤楼门票',
-                    name: '王小虎',
-                },
-                    {
-                        date: '武汉市黄鹤楼门票',
-                        name: '王小虎',
-                    },
-                    {
-                        date: '武汉市黄鹤楼门票',
-                        name: '王小虎',
-                    }
-                ],
                 orderForm:{
                     date:'',
                     num:0,
@@ -113,10 +99,15 @@
                     .then(response => {//成功执行这里
                         console.log(response)
                         this.scenicDetail = response.data
+                        this.scenicPicList = response.data.scenicPicList
+                        console.log(this.scenicPicList)
                     })
                     .catch(response => {
                         console.log(response);
                     });
+            },
+            addOrder(row){
+                console.log(row)
             }
         }
     }
@@ -171,5 +162,13 @@
     .el-main{
         padding-top: 0;
     }
-
+</style>
+<style>
+    .el-collapse-item__header{
+        padding-left: 1rem;
+    }
+    .el-collapse-item__content{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 </style>
