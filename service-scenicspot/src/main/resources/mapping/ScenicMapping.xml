@@ -29,7 +29,7 @@
     </select>
 
     <select id="selectScenicProject" resultType="com.example.servicescenicspot.entity.ScenicProject">
-        select `id`,`name`,projectPrice from scenic_project where scenicId = #{scenicId}
+        select `id`,`name`,projectPrice,openTime,note from scenic_project where scenicId = #{scenicId}
     </select>
 
     <select id="getScenicPic" resultType="com.example.servicescenicspot.entity.ScenicPic">

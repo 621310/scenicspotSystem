@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.servicescenicspot.mapper.OrderMapper">
+
+
+    <insert id="addOrder" parameterType="com.example.servicescenicspot.entity.Order">
+        insert into orderNew(`id`,`code`,userId,scenicId,projectId,orderStatus,
+        projectPrice,num,total,`time`,orderTime,createTime,modifyTime,creatorId,modifierId)
+        values (UUID(),#{order.code},#{order.userId},#{order.scenicId},#{order.projectId},
+        #{order.orderStatus},#{order.projectPrice},#{order.num},#{order.total},#{order.time},NOW(),NOW(),NOW(),#{order.userId},#{order.userId})
+
+    </insert>
+
+</mapper>

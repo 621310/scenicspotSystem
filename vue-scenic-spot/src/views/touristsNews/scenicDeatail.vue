@@ -34,7 +34,9 @@
                     <el-col  :span="24">
                         <el-table :data="scenicDetail.scenicProjectsList" border style="width: 100%;margin-top: 1rem">
                             <el-table-column prop="name" label="名称" width="500"></el-table-column>
-                            <el-table-column prop="projectPrice" label="价格(元)"  width="100"></el-table-column>
+                            <el-table-column prop="projectPrice" label="价格(元)" ></el-table-column>
+                            <el-table-column prop="openTime" label="开放时间" ></el-table-column>
+                            <el-table-column prop="note" label="其他" ></el-table-column>
 <!--                            <el-table-column label="选择日期" width="300" prop="date">-->
 <!--                                <template slot-scope="scope">-->
 <!--                                    <div class="block">-->
@@ -52,11 +54,39 @@
 <!--                            </el-table-column>-->
                             <el-table-column fixed="right" label="操作">
                                 <template slot-scope="scope">
-                                    <el-button type="text" @click="addOrder(scope.row)" size="small">添加至我的订单</el-button>
+                                    <el-button type="text" @click="addOrderDialog(scope.row)" size="small">添加至我的订单</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
                     </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-dialog title="添加订单" :visible.sync="dialogVisible" width="35%">
+                        <el-form ref="orderForm" :rules="rules" :model="orderForm" label-width="80px">
+                            <el-form-item label="名称">
+                                <el-input disabled v-model="orderForm.name"></el-input>
+                            </el-form-item>
+
+                            <el-form-item label="价格">
+                                <el-input disabled v-model="orderForm.projectPrice"></el-input>
+                            </el-form-item>
+
+                            <el-form-item label="选择日期" prop="time">
+                                <el-date-picker type="date" placeholder="选择日期"  v-model="orderForm.time" style="width: 100%;" value-format="yyyy-MM-dd"></el-date-picker>
+                            </el-form-item>
+
+                            <el-form-item label="数量">
+                                <el-input-number size="small" v-model="orderForm.num" style="width: 100%;" :min="1" :max="6"></el-input-number>
+                            </el-form-item>
+
+
+                        </el-form>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @click="dialogVisible = false">取 消</el-button>
+                            <el-button type="primary" @click="addOrder('orderForm')">添加至我的订单</el-button>
+                        </span>
+                    </el-dialog>
                 </el-row>
             </el-main>
         </el-container>
@@ -80,12 +110,21 @@
                 swiperOption:[],
                 bannerList:[],
                 orderForm:{
-                    date:'',
+                    scenicId:'',
+                    projectId:'',
+                    name:'',
+                    projectPrice:'',
+                    time:'',
                     num:0,
                 },
                 scenicId:'',
                 scenicDetail:{},
-                activeName: ''
+                activeName: '',
+                dialogVisible:false,
+
+                rules: {
+                    time: [{ type: 'string', required: true, message: '请选择日期', trigger: 'change' }],
+                },
             }
         },
         mounted(){
@@ -106,8 +145,34 @@
                         console.log(response);
                     });
             },
-            addOrder(row){
-                console.log(row)
+            addOrderDialog(row){
+                this.orderForm.scenicId = this.scenicId
+                this.orderForm.projectId = row.id
+                this.orderForm.name = row.name
+                this.orderForm.projectPrice = row.projectPrice
+                this.dialogVisible = true;
+            },
+            addOrder(orderForm){
+                this.$refs[orderForm].validate((valid) => {
+                    if (valid) {
+                        console.log(this.orderForm)
+                        this.$post('/api/addOrder',this.orderForm)
+                            .then(response => {//成功执行这里
+                                if(response.data.code == 200){
+                                    this.$message({  showClose: true,  message: response.data.data,  type: 'success' });
+                                }else{
+                                    this.$message({  showClose: true,  message:  response.data.data,  type: 'error' });
+                                }
+                                this.dialogVisible = false;
+                            })
+                            .catch(response => {
+                                console.log(response);
+                            });
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
             }
         }
     }
