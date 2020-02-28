@@ -11,4 +11,15 @@
 
     </insert>
 
+    <select id="getMyOrders" resultType="com.example.servicescenicspot.entity.Order">
+         select `code`,a.scenicId,b.name as scenicName,projectId,c.name as projectName,`time`,total,orderStatus
+        from orderNew a
+        left join scenic_spot b
+        on a.scenicId = b.id
+        left join scenic_project c
+        on a.projectId = c.id
+        where a.userId = #{userId}
+        order by a.orderTime DESC
+    </select>
+
 </mapper>

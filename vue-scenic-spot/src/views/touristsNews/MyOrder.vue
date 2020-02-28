@@ -8,15 +8,7 @@
                             <el-form-item label="名称">
                                 <el-input v-model="searchForm.name"></el-input>
                             </el-form-item>
-                            <el-form-item label="活动时间">
-                                <el-date-picker
-                                        v-model="searchForm.date"
-                                        type="daterange"
-                                        range-separator="至"
-                                        start-placeholder="开始日期"
-                                        end-placeholder="结束日期">
-                                </el-date-picker>
-                            </el-form-item>
+
                             <el-form-item>
                                 <el-button type="primary" @click="onSubmit">搜索</el-button>
                             </el-form-item>
@@ -24,12 +16,16 @@
                     </el-row>
                     <el-row>
                         <el-table :data="tableData" stripe border style="width: 100%">
-                            <el-table-column prop="date" label="订单编号" width="180"></el-table-column>
-                            <el-table-column prop="name" label="景区名称" width="180"></el-table-column>
-                            <el-table-column prop="address" label="景区地址"></el-table-column>
-                            <el-table-column prop="address" label="包含项目"></el-table-column>
-                            <el-table-column prop="address" label="时间"></el-table-column>
-                            <el-table-column prop="address" label="支付金额"></el-table-column>
+                            <el-table-column prop="code" label="订单编号" width="180"></el-table-column>
+                            <el-table-column prop="scenicName" label="景区名称" width="180"></el-table-column>
+                            <el-table-column prop="projectName" label="项目名称"></el-table-column>
+                            <el-table-column prop="time" label="时间"></el-table-column>
+                            <el-table-column prop="total" label="顶订单金额"></el-table-column>
+                            <el-table-column prop="orderStatus" label="状态">
+                                <template slot-scope="scope">
+                                    <span>{{scope.row.orderStatus==0?'未支付': scope.row.orderStatus == 1?'已支付': scope.row.orderStatus == 2?'待处理':scope.row.orderStatus == 3?'已取消':'-'}}</span>
+                                </template>
+                            </el-table-column>
                             <el-table-column fixed="right" label="操作" width="120">
                                 <template slot-scope="scope">
                                     <el-button @click.native.prevent="onSubmit" type="text" size="small">查看详情</el-button>
@@ -53,34 +49,28 @@
         },
         data(){
           return {
-              tableData: [
-                  {
-                  date: '2016-05-02',
-                  name: '王小虎',
-                  address: '上海市普陀区金沙江路 1518 弄'
-              }, {
-                  date: '2016-05-04',
-                  name: '王小虎',
-                  address: '上海市普陀区金沙江路 1517 弄'
-              }, {
-                  date: '2016-05-01',
-                  name: '王小虎',
-                  address: '上海市普陀区金沙江路 1519 弄'
-              }, {
-                  date: '2016-05-03',
-                  name: '王小虎',
-                  address: '上海市普陀区金沙江路 1516 弄'
-              }
-              ],
+              tableData: [],
               searchForm: {
                   name:'',
-                  date:[]
               },
           }
+        },
+        mounted(){
+            this.getInfo();
         },
         methods:{
             onSubmit(){
 
+            },
+            getInfo(){
+                this.$post('/api/getMyOrders',{})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        this.tableData = response.data
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             },
 
         }

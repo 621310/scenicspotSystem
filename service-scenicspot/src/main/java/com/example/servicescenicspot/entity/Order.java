@@ -13,6 +13,25 @@ public class Order {
     private double total;
     private String time;
 
+    private String scenicName;
+    private String projectName;
+
+    public String getScenicName() {
+        return scenicName;
+    }
+
+    public void setScenicName(String scenicName) {
+        this.scenicName = scenicName;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
     public String getId() {
         return id;
     }

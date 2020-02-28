@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -24,6 +25,7 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    //新增一个订单
     @RequestMapping("addOrder")
     public Map<String,Object> addOrder(@RequestBody Order order, ServletRequest request){
         Map<String,Object> result = new HashMap<>();
@@ -44,4 +46,15 @@ public class OrderController {
         Constants.getSuccMsg(result,map);
         return result;
     }
+
+    //查询我的订单
+    @RequestMapping("getMyOrders")
+    public Map<String,Object> getMyOrders(ServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String userId = BaseUser.getUser(request);
+        List<Order> orderList = orderService.getMyOrders(userId);
+        Constants.getSuccMsg(result,orderList);
+        return result;
+    }
+
 }
