@@ -57,4 +57,14 @@ public class OrderController {
         return result;
     }
 
+    //查询订单详情
+    @RequestMapping("getOrderDetail")
+    public Map<String,Object> getOrderDetail(@RequestBody Map<String,String> param){
+        Map<String,Object> result = new HashMap<>();
+        String orderId = param.get("orderId");
+        Order orderDetail = orderService.getOrderDetail(orderId);
+        Constants.getSuccMsg(result,orderDetail);
+        return result;
+    }
+
 }

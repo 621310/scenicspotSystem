@@ -40,6 +40,24 @@ const routes = [
                         'scenicDeatail',
                     component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/scenicDeatail.vue')
                 },
+                {
+                    path: '/OrderDetail',
+                    name:
+                        'OrderDetail',
+                    component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/OrderDetail.vue')
+                },
+                {
+                    path: '/Pay',
+                    name:
+                        'Pay',
+                    component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/Pay.vue')
+                },
+                {
+                    path: '/Recharge',
+                    name:
+                        'Recharge',
+                    component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/Recharge.vue')
+                },
             ]
     },
 

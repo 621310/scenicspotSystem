@@ -9,4 +9,6 @@ public interface OrderService {
     public int addOrder(Order order);
 
     public List<Order> getMyOrders(String userId);
+
+    public Order getOrderDetail(String orderId);
 }

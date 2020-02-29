@@ -5,14 +5,14 @@
 
     <insert id="addOrder" parameterType="com.example.servicescenicspot.entity.Order">
         insert into orderNew(`id`,`code`,userId,scenicId,projectId,orderStatus,
-        projectPrice,num,total,`time`,orderTime,createTime,modifyTime,creatorId,modifierId)
+        projectPrice,num,total,`time`,note,orderTime,createTime,modifyTime,creatorId,modifierId)
         values (UUID(),#{order.code},#{order.userId},#{order.scenicId},#{order.projectId},
-        #{order.orderStatus},#{order.projectPrice},#{order.num},#{order.total},#{order.time},NOW(),NOW(),NOW(),#{order.userId},#{order.userId})
+        #{order.orderStatus},#{order.projectPrice},#{order.num},#{order.total},#{order.time},#{order.note},NOW(),NOW(),NOW(),#{order.userId},#{order.userId})
 
     </insert>
 
     <select id="getMyOrders" resultType="com.example.servicescenicspot.entity.Order">
-         select `code`,a.scenicId,b.name as scenicName,projectId,c.name as projectName,`time`,total,orderStatus
+         select a.id,`code`,a.scenicId,b.name as scenicName,projectId,c.name as projectName,`time`,total,orderStatus
         from orderNew a
         left join scenic_spot b
         on a.scenicId = b.id
@@ -20,6 +20,17 @@
         on a.projectId = c.id
         where a.userId = #{userId}
         order by a.orderTime DESC
+    </select>
+
+    <select id="getOrderDetail" resultType="com.example.servicescenicspot.entity.Order">
+        select a.id,`code`,a.scenicId,b.name as scenicName,projectId,c.name as projectName,b.address,
+        a.projectPrice,a.num,a.`time`,a.total,a.orderStatus,a.orderTime,a.note
+        from orderNew a
+        left join scenic_spot b
+        on a.scenicId = b.id
+        left join scenic_project c
+        on a.projectId = c.id
+        where a.id = #{orderId}
     </select>
 
 </mapper>

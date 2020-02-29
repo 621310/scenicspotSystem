@@ -28,7 +28,7 @@
                             </el-table-column>
                             <el-table-column fixed="right" label="操作" width="120">
                                 <template slot-scope="scope">
-                                    <el-button @click.native.prevent="onSubmit" type="text" size="small">查看详情</el-button>
+                                    <el-button @click.native.prevent="onSubmit(scope.row)" type="text" size="small">查看详情</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -59,8 +59,9 @@
             this.getInfo();
         },
         methods:{
-            onSubmit(){
-
+            onSubmit(row){
+                sessionStorage.setItem("orderId",row.id)
+                this.$router.push({name: 'OrderDetail'})
             },
             getInfo(){
                 this.$post('/api/getMyOrders',{})

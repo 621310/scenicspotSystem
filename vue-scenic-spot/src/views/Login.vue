@@ -13,7 +13,7 @@
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="onLogin">登陆</el-button>
-                        <el-button type="primary" @click="onLogin2">登陆</el-button>
+                        <el-button type="primary" @click="onLogin2">微信登陆</el-button>
                         <el-button>注册</el-button>
                     </el-form-item>
                 </el-form>

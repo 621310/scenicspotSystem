@@ -80,6 +80,11 @@
                                 <el-input-number size="small" v-model="orderForm.num" style="width: 100%;" :min="1" :max="6"></el-input-number>
                             </el-form-item>
 
+                            <el-form-item label="订单备注">
+                                <el-input type="textarea" maxlength="40" :rows="2" placeholder="最多可输入40字哦" v-model="orderForm.note">
+                                </el-input>
+                            </el-form-item>
+
 
                         </el-form>
                         <span slot="footer" class="dialog-footer">
@@ -116,6 +121,7 @@
                     projectPrice:'',
                     time:'',
                     num:0,
+                    note:''
                 },
                 scenicId:'',
                 scenicDetail:{},

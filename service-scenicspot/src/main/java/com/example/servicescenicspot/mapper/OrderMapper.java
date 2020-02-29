@@ -13,4 +13,6 @@ public interface OrderMapper {
     int addOrder(@Param("order")Order order);
 
     List<Order> getMyOrders(@Param("userId")String userId);
+
+    Order getOrderDetail(@Param("orderId") String orderId);
 }
