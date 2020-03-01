@@ -15,4 +15,6 @@ public interface OrderMapper {
     List<Order> getMyOrders(@Param("userId")String userId);
 
     Order getOrderDetail(@Param("orderId") String orderId);
+
+    int updatePaySuccess(@Param("code") String code);
 }

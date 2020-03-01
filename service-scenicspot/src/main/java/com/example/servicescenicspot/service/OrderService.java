@@ -11,4 +11,6 @@ public interface OrderService {
     public List<Order> getMyOrders(String userId);
 
     public Order getOrderDetail(String orderId);
+
+    public int updatePaySuccess(String code);
 }

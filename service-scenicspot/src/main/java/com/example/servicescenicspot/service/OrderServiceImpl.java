@@ -28,4 +28,9 @@ public class OrderServiceImpl extends BaseService implements OrderService {
     public Order getOrderDetail(String orderId) {
         return orderMapper.getOrderDetail(orderId);
     }
+
+    @Override
+    public int updatePaySuccess(String code) {
+        return orderMapper.updatePaySuccess(code);
+    }
 }

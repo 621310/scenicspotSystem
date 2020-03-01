@@ -33,4 +33,8 @@
         where a.id = #{orderId}
     </select>
 
+    <update id="updatePaySuccess" parameterType="string">
+        update orderNew set orderStatus = 1 where code = #{code}
+    </update>
+
 </mapper>

@@ -5,17 +5,25 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.example.servicescenicspot.common.AlipayConfig;
+import com.example.servicescenicspot.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+//@RequestMapping(value="/api")  //部署加上
 public class PayController {
+
+    @Autowired
+    OrderService orderService;
 
     @RequestMapping("/pay")
     public void payController(HttpServletRequest request, @RequestBody Map<String,String> param, HttpServletResponse response) throws IOException {
@@ -66,5 +74,24 @@ public class PayController {
         response.getWriter().write(form);//直接将完整的表单html输出到页面
         response.getWriter().flush();
         response.getWriter().close();
+    }
+
+
+    @RequestMapping("paySuccess")
+    @ResponseBody
+    public String paySuccess(HttpServletRequest request){
+        String out_trade_no = request.getParameter("out_trade_no");
+        String trade_no = request.getParameter("trade_no");
+        if(!out_trade_no.equals("") && out_trade_no != null && !trade_no.equals("") && trade_no != null){
+            int i = orderService.updatePaySuccess(out_trade_no);
+            if(i>0){
+                return "订单"+out_trade_no+"已支付成功，可至订单详情页面查看。";
+            }else{
+                return "服务器异常";
+            }
+        }else{
+            return "支付失败";
+        }
+
     }
 }
