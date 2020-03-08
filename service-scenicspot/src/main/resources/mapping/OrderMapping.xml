@@ -34,7 +34,20 @@
     </select>
 
     <update id="updatePaySuccess" parameterType="string">
-        update orderNew set orderStatus = 1 where code = #{code}
+        update orderNew
+        set
+        orderStatus = 1,
+        trade_no = #{trade_no},
+        modifyTime = NOW()
+         where code = #{code}
+    </update>
+
+    <update id="updateCancelOrder" parameterType="string">
+        update orderNew
+        set
+        orderStatus = 2,
+         modifyTime = NOW()
+         where id = #{id}
     </update>
 
 </mapper>

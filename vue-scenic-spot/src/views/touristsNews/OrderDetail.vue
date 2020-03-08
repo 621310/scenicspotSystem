@@ -50,7 +50,7 @@
                         <el-col :offset="2" :span="3" class="orderstatus">{{orderDetail.orderStatus ==0?'未支付':orderDetail.orderStatus==1?'已支付':orderDetail.orderStatus==2?'待处理':orderDetail.orderStatus==3?'已取消':'-'}}</el-col>
                         <el-col :offset="2" :span="12">
                             <el-button type="success" v-if="orderDetail.orderStatus ==0" @click="goPay" size="mini" round>支付</el-button>
-                            <el-button type="danger" v-if="orderDetail.orderStatus==1" size="mini" round>取消订单</el-button>
+                            <el-button type="danger" v-if="orderDetail.orderStatus==1" @click="cancleOrderRequest" size="mini" round>取消订单</el-button>
                         </el-col>
                     </el-row>
                 </div>
@@ -97,6 +97,22 @@
                 sessionStorage.setItem("WIDsubject",this.orderDetail.projectName)
                 sessionStorage.setItem("projectName",this.orderDetail.projectName+'*'+this.orderDetail.num)
                 this.$router.push({name: 'Pay'})
+            },
+            cancleOrderRequest(){
+                this.$post('/api/cancleOrderRequest',{"id":this.orderDetail.id})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        if(response.data.code == "200"){
+                            this.getInfo()
+                            this.$message({  showClose: true,  message: response.data.data,  type: 'success' });
+                        }else{
+                            this.getInfo()
+                            this.$message({  showClose: true,  message:  response.data.data,  type: 'error' });
+                        }
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             }
         }
     }

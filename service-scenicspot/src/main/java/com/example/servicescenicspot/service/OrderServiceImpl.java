@@ -30,7 +30,12 @@ public class OrderServiceImpl extends BaseService implements OrderService {
     }
 
     @Override
-    public int updatePaySuccess(String code) {
-        return orderMapper.updatePaySuccess(code);
+    public int updatePaySuccess(String code,String trade_no) {
+        return orderMapper.updatePaySuccess(code,trade_no);
+    }
+
+    @Override
+    public int updateCancelOrder(String id) {
+        return orderMapper.updateCancelOrder(id);
     }
 }

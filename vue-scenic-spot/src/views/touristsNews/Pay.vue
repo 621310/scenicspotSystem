@@ -58,7 +58,6 @@
                 this.$post('/api/pay',this.payForm)
                     .then(response => {//成功执行这里
                         console.log(response)
-
                         let routeData = this.$router.resolve({ path: 'Recharge', query: { htmls: response }});
                         window.open(routeData.href, '_blank');
 

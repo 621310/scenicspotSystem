@@ -67,4 +67,21 @@ public class OrderController {
         return result;
     }
 
+    @RequestMapping("cancleOrderRequest")
+    public Map<String,Object> cancleOrderRequest(@RequestBody Map<String,String> param){
+        Map<String,Object> result = new HashMap<>();
+        Map<String,Object> map = new HashMap<>();
+        String id = param.get("id");
+        int i = orderService.updateCancelOrder(id);
+        if(i>0){
+            map.put("code",200);
+            map.put("data","订单取消请求已发送，景区正在处理。");
+        }else{
+            map.put("code",201);
+            map.put("data","订单不可取消。");
+        }
+        Constants.getSuccMsg(result,map);
+        return result;
+    }
+
 }

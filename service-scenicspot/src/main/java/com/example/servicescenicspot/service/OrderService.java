@@ -12,5 +12,7 @@ public interface OrderService {
 
     public Order getOrderDetail(String orderId);
 
-    public int updatePaySuccess(String code);
+    public int updatePaySuccess(String code,String trade_no);
+
+    public int updateCancelOrder(String id);
 }

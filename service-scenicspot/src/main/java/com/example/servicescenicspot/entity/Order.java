@@ -3,7 +3,8 @@ package com.example.servicescenicspot.entity;
 public class Order {
 
     private String id;
-    private String code;
+    private String code; //商家订单便号
+    private String trade_no; //支付宝订单编号
     private String userId;
     private String scenicId;
     private String projectId;
@@ -18,6 +19,15 @@ public class Order {
     private String address;
     private String orderTime;
     private String note;
+
+
+    public String getTrade_no() {
+        return trade_no;
+    }
+
+    public void setTrade_no(String trade_no) {
+        this.trade_no = trade_no;
+    }
 
     public String getNote() {
         return note;

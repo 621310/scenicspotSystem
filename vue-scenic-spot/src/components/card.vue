@@ -2,7 +2,7 @@
     <el-aside width="200px">
         <div class="card">
             <div class="header">
-                hi,undefinde
+                hi,{{username}}
             </div>
             <div class="content">
                 <div>今天是：</div>
@@ -21,11 +21,14 @@
                 // currentDate: new Date(),
                 nowDate: "",    // 当前日期
                 nowTime: "",    // 当前时间
-                nowWeek: ""     // 当前星期
+                nowWeek: "" ,    // 当前星期
+
+               username:''
             };
         },
         mounted() {
             this.currentTime();
+            this.getInfo();
         },
         // 销毁定时器
         beforeDestroy: function() {
@@ -66,6 +69,16 @@
                 }
                 _this.nowTime = hh + ":" + mf;
                 _this.nowDate = yy + "/" + mm + "/" + dd;
+            },
+            getInfo(){
+                this.$post('/api/getUsername',{})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        this.username = response.data.username
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             }
         }
     }

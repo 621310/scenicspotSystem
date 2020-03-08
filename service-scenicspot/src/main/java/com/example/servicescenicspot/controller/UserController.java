@@ -2,6 +2,7 @@ package com.example.servicescenicspot.controller;
 
 import com.example.servicescenicspot.entity.UserInfo;
 import com.example.servicescenicspot.service.UserService;
+import com.example.servicescenicspot.util.BaseUser;
 import com.example.servicescenicspot.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.servicescenicspot.util.JwtUtil;
 
+import javax.servlet.ServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +32,15 @@ public class UserController {
             userInfo1.setToken(token);
             Constants.getSuccMsg(result,userInfo1);
         }
+        return  result;
+    }
+
+    @RequestMapping("getUsername")
+    public Map<String,Object> getUsername(ServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String userId = BaseUser.getUser(request);
+        UserInfo userInfo = userService.getUserInfoByUserid(userId);
+        Constants.getSuccMsg(result,userInfo);
         return  result;
     }
 }

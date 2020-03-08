@@ -1,10 +1,15 @@
 package com.example.servicescenicspot.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
+import com.alipay.api.domain.AlipayTradeRefundModel;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.alipay.api.request.AlipayTradeRefundRequest;
+import com.alipay.api.response.AlipayTradeRefundResponse;
 import com.example.servicescenicspot.common.AlipayConfig;
+import com.example.servicescenicspot.entity.Order;
 import com.example.servicescenicspot.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -83,7 +88,7 @@ public class PayController {
         String out_trade_no = request.getParameter("out_trade_no");
         String trade_no = request.getParameter("trade_no");
         if(!out_trade_no.equals("") && out_trade_no != null && !trade_no.equals("") && trade_no != null){
-            int i = orderService.updatePaySuccess(out_trade_no);
+            int i = orderService.updatePaySuccess(out_trade_no,trade_no);
             if(i>0){
                 return "订单"+out_trade_no+"已支付成功，可至订单详情页面查看。";
             }else{
@@ -94,4 +99,30 @@ public class PayController {
         }
 
     }
+
+    @RequestMapping("refundOrder")
+    public String refundOrder(@RequestBody Order order){
+        AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.APP_ID, AlipayConfig.APP_PRIVATE_KEY, "json", AlipayConfig.CHARSET, AlipayConfig.ALIPAY_PUBLIC_KEY, AlipayConfig.sign_type);
+        AlipayTradeRefundModel refundModel = new AlipayTradeRefundModel();
+        AlipayTradeRefundModel alipayTradeRefundModel = new AlipayTradeRefundModel();
+        refundModel.setTradeNo(order.getTrade_no());
+        refundModel.setOutTradeNo(order.getCode());
+        refundModel.setRefundAmount(String.valueOf(order.getTotal()));
+        refundModel.setRefundReason("商品退款");
+        AlipayTradeRefundRequest request = new AlipayTradeRefundRequest();
+        request.setBizModel(refundModel);
+        String mesage = "";
+        try{
+            AlipayTradeRefundResponse response = alipayClient.execute(request);
+            System.out.println(response.getMsg()+"\n");
+            System.out.println(response.getBody());
+            mesage = response.getMsg();
+            }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return mesage;
+    }
+
 }

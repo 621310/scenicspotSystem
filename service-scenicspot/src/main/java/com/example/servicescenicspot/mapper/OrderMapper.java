@@ -16,5 +16,7 @@ public interface OrderMapper {
 
     Order getOrderDetail(@Param("orderId") String orderId);
 
-    int updatePaySuccess(@Param("code") String code);
+    int updatePaySuccess(@Param("code") String code,@Param("trade_no") String trade_no);
+
+    int updateCancelOrder(@Param("id") String id);
 }
