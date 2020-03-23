@@ -8,6 +8,15 @@ public class UserInfo {
     private String phone;
     private String email;
     private String token;
+    private int type;
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
 
     public String getToken() {
         return token;

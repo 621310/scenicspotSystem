@@ -12,8 +12,7 @@
                         <el-input type='password' v-model="form.password"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="onLogin">登陆</el-button>
-                        <el-button type="primary" @click="onLogin2">微信登陆</el-button>
+                        <el-button type="primary" @click="onLogin">登录</el-button>
                         <el-button>注册</el-button>
                     </el-form-item>
                 </el-form>
@@ -56,8 +55,12 @@
                     if(res.data.code != '201'){
                         this.$message({  showClose: true,  message: '登陆成功',  type: 'success' });
                         sessionStorage.setItem("token",res.data.data.token)
-                        console.log(sessionStorage.getItem('token'))
-                        this.$router.push({name: 'touristsHome'})
+                        if(res.data.data.type == 0){
+                            this.$router.push({name: 'touristsHome'})
+                        }else{
+                            this.$router.push({name: 'scenicspotHome'})
+                        }
+
                     }else{
                         this.$message({  showClose: true,  message: '账号或密码错误！',  type: 'error' });
                     }

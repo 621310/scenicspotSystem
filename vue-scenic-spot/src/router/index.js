@@ -65,7 +65,14 @@ const routes = [
         path: '/scenicspot',
         name:'scenicspotHome',
         component: () =>import(/* webpackChunkName: "about" */ '../views/scenicspotNews/Home.vue'),
-        children:[]
+        children:[
+            {
+                path: '/UnprocessedOrder',
+                name:
+                    'UnprocessedOrder',
+                component:() =>import(/* webpackChunkName: "about" */ '../views/scenicspotNews/UnprocessedOrder.vue')
+            },
+        ]
     },
 
 
