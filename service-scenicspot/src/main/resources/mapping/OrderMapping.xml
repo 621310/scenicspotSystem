@@ -50,4 +50,12 @@
          where id = #{id}
     </update>
 
+    <update id="updateagreeCancelOrder" parameterType="string">
+        update orderNew
+        set
+        orderStatus = 3,
+         modifyTime = NOW()
+         where id = #{id}
+    </update>
+
 </mapper>

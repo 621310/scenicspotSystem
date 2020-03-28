@@ -15,4 +15,6 @@ public interface OrderService {
     public int updatePaySuccess(String code,String trade_no);
 
     public int updateCancelOrder(String id);
+
+    public int updateagreeCancelOrder(String id);
 }

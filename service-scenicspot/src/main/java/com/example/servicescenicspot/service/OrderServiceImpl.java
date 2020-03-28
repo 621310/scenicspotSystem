@@ -38,4 +38,9 @@ public class OrderServiceImpl extends BaseService implements OrderService {
     public int updateCancelOrder(String id) {
         return orderMapper.updateCancelOrder(id);
     }
+
+    @Override
+    public int updateagreeCancelOrder(String id) {
+        return orderMapper.updateagreeCancelOrder(id);
+    }
 }

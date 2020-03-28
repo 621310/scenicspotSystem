@@ -19,4 +19,6 @@ public interface OrderMapper {
     int updatePaySuccess(@Param("code") String code,@Param("trade_no") String trade_no);
 
     int updateCancelOrder(@Param("id") String id);
+
+    int updateagreeCancelOrder(@Param("id") String id);
 }

@@ -5,7 +5,7 @@
             <el-col :span="3">
                 <el-menu :default-active="this.$router.path" class="el-menu-vertical-demo" @open="handleOpen"
                          @close="handleClose" router>
-                    <el-menu-item index="/scenicList">
+                    <el-menu-item index="">
                         <i class="el-icon-menu"></i>
                         <span slot="title">管理</span>
                     </el-menu-item>

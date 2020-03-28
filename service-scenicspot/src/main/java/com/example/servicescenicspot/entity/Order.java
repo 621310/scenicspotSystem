@@ -20,6 +20,33 @@ public class Order {
     private String orderTime;
     private String note;
 
+    private String username;
+    private String phone;
+    private String scenidName;
+
+    public String getScenidName() {
+        return scenidName;
+    }
+
+    public void setScenidName(String scenidName) {
+        this.scenidName = scenidName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getTrade_no() {
         return trade_no;

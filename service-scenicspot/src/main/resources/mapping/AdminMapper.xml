@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.servicescenicspot.mapper.AdminMapper">
+
+
+    <select id="selectPendingOrder" resultType="com.example.servicescenicspot.entity.Order">
+        SELECT a.id,a.code,a.trade_no,a.userId,a.total,a.time,
+        b.name as scenidName,
+        c.username,c.phone
+         from orderNew a
+            left join scenic_spot b
+            on a.scenicId = b.id
+            left join `user` c
+            on a.userId = c.id
+            where orderStatus = 2 and b.userid = #{userId}
+    </select>
+
+</mapper>

@@ -100,6 +100,7 @@ public class PayController {
 
     }
 
+    //q取消订单接口
     @RequestMapping("refundOrder")
     public String refundOrder(@RequestBody Order order){
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.APP_ID, AlipayConfig.APP_PRIVATE_KEY, "json", AlipayConfig.CHARSET, AlipayConfig.ALIPAY_PUBLIC_KEY, AlipayConfig.sign_type);
@@ -117,6 +118,16 @@ public class PayController {
             System.out.println(response.getMsg()+"\n");
             System.out.println(response.getBody());
             mesage = response.getMsg();
+            if(mesage.equals("Success")){
+                int i = orderService.updateagreeCancelOrder(order.getId());
+                if(i>0){
+                    return mesage;
+                }else{
+                    return "";
+                }
+            }else{
+                return "";
+            }
             }
         catch(Exception e){
             e.printStackTrace();
