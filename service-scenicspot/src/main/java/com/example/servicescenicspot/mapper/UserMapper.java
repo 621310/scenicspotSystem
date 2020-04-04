@@ -10,4 +10,10 @@ public interface UserMapper {
     UserInfo getUserInfo(@Param("userInfo") UserInfo userInfo);
 
     UserInfo getUserInfoByUserid(@Param("userid")String userid);
+
+    Integer register(@Param("userInfo") UserInfo userInfo);
+
+    Integer updateUserMsg(@Param("userInfo") UserInfo userInfo);
+
+
 }

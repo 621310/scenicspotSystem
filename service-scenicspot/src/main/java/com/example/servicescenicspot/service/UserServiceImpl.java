@@ -27,4 +27,14 @@ public class UserServiceImpl  extends BaseService implements UserService {
         UserInfo userInfo = userMapper.getUserInfoByUserid(userid);
         return userInfo;
     }
+
+    @Override
+    public Integer register(UserInfo userInfo) {
+        return userMapper.register(userInfo);
+    }
+
+    @Override
+    public Integer updateUserMsg(UserInfo userInfo) {
+        return userMapper.updateUserMsg(userInfo);
+    }
 }

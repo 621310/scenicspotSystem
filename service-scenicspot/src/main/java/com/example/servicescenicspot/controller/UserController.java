@@ -43,4 +43,37 @@ public class UserController {
         Constants.getSuccMsg(result,userInfo);
         return  result;
     }
+
+    @RequestMapping("register")
+    public Map<String,Object> register(@RequestBody UserInfo userInfo){
+        Map<String,Object> result = new HashMap<>();
+        Map<String,Object> map = new HashMap<>();
+        Integer i = userService.register(userInfo);
+        if(i>0){
+            map.put("code",200);
+            map.put("data","注册成功，请登录");
+        }else{
+            map.put("code",201);
+            map.put("data","注册失败，请重试");
+        }
+        Constants.getSuccMsg(result,map);
+        return  result;
+    }
+
+    @RequestMapping("updateUserMsg")
+    public Map<String,Object> updateUserMsg(@RequestBody UserInfo userInfo){
+        Map<String,Object> result = new HashMap<>();
+        Map<String,Object> map = new HashMap<>();
+        Integer i = userService.updateUserMsg(userInfo);
+        if(i>0){
+            map.put("code",200);
+            map.put("data","修改成功");
+        }else{
+            map.put("code",201);
+            map.put("data","修改失败");
+        }
+        Constants.getSuccMsg(result,map);
+        return  result;
+    }
+
 }

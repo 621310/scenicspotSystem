@@ -9,6 +9,24 @@ public class UserInfo {
     private String email;
     private String token;
     private int type;
+    private String sex;
+    private String birthday;
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     public int getType() {
         return type;

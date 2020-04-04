@@ -9,4 +9,9 @@ public interface UserService {
 public UserInfo getUserInfo(UserInfo userInfo);
 
 public UserInfo getUserInfoByUserid(String userid);
+
+public Integer register(UserInfo userInfo);
+
+public Integer updateUserMsg(UserInfo userInfo);
+
 }

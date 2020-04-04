@@ -6,7 +6,7 @@
                 <el-row>
                     <el-col class="scenicItem" :span="8" v-for="(item, index) in scenicList" :key="item.id" :offset="index > 0 ? 0 : 0">
                         <el-card shadow="hover" :body-style="{ padding: '0px' }">
-                            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                            <img :src="item.pic"
                                  class="image">
                             <div class="card_bottom" @click="goScenicDetail(item.id)">
                                 <div><span>{{item.name}}</span><span class="price oldprice">￥{{item.oldTicketsPrice}}</span><span class="price">￥{{item.ticketsPrice}}</span>

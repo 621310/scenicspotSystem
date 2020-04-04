@@ -12,4 +12,21 @@
          select * from `user`
         where id=#{userid}
     </select>
+
+    <insert id="register" parameterType="com.example.servicescenicspot.entity.UserInfo">
+        insert into `user`(id,password,phone,email,type,createTime,modifyTime)
+        value (UUID(),#{userInfo.password},#{userInfo.phone},#{userInfo.email}
+        ,#{userInfo.type},NOW(),NOW())
+    </insert>
+
+    <update id="updateUserMsg" parameterType="com.example.servicescenicspot.entity.UserInfo">
+        update `user`
+        set username = #{userInfo.username},
+        phone = #{userInfo.phone} ,
+        email = #{userInfo.email} ,
+        birthday = #{userInfo.birthday} ,
+        sex = #{userInfo.sex} ,
+        modifyTime = NOW()
+        where id = #{userInfo.id}
+    </update>
 </mapper>
