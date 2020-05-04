@@ -19,4 +19,15 @@ public class AdminServiceImpl extends BaseService implements AdminService {
         List<Order> list = adminMapper.selectPendingOrder(userId);
         return list;
     }
+
+    @Override
+    public List<Order> selectAllorder(String userId) {
+        List<Order> list = adminMapper.selectAllorder(userId);
+        return list;
+    }
+
+    @Override
+    public Integer selectPendingorderCount(String userId) {
+        return adminMapper.selectPendingorderCount(userId);
+    }
 }

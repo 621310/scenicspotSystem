@@ -33,4 +33,10 @@ public class ScenicServiceImpl extends BaseService implements ScenicService {
         List<ScenicPic> scenicPics = scenicMapper.getScenicPic(id);
         return scenicPics;
     }
+
+    @Override
+    public List<Scenic> selectScenicByUserId(String userId) {
+        List<Scenic> list = scenicMapper.selectScenicByUserId(userId);
+        return list;
+    }
 }

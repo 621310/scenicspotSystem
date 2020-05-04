@@ -16,4 +16,6 @@ public interface ScenicMapper {
     public ScenicDetail getScenicDetail(@Param("id") String id);
 
     public List<ScenicPic> getScenicPic(@Param("id") String id);
+
+    public List<Scenic> selectScenicByUserId(String userId);
 }

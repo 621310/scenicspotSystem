@@ -58,6 +58,12 @@ const routes = [
                         'Recharge',
                     component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/Recharge.vue')
                 },
+                {
+                    path: '/MessageCenter',
+                    name:
+                        'MessageCenter',
+                    component:() =>import(/* webpackChunkName: "about" */ '../views/touristsNews/MessageCenter.vue')
+                },
             ]
     },
 
@@ -71,6 +77,18 @@ const routes = [
                 name:
                     'UnprocessedOrder',
                 component:() =>import(/* webpackChunkName: "about" */ '../views/scenicspotNews/UnprocessedOrder.vue')
+            },
+            {
+                path: '/manage',
+                name:
+                    'manage',
+                component:() =>import(/* webpackChunkName: "about" */ '../views/scenicspotNews/manage.vue')
+            },
+            {
+                path: '/orderAll',
+                name:
+                    'orderAll',
+                component:() =>import(/* webpackChunkName: "about" */ '../views/scenicspotNews/orderAll.vue')
             },
         ]
     },

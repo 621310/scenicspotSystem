@@ -4,7 +4,7 @@
 
 
     <select id="selectPendingOrder" resultType="com.example.servicescenicspot.entity.Order">
-        SELECT a.id,a.code,a.trade_no,a.userId,a.total,a.time,
+        SELECT a.id,a.code,a.trade_no,a.userId,a.total,a.time,a.orderStatus,
         b.name as scenidName,
         c.username,c.phone
          from orderNew a
@@ -13,6 +13,28 @@
             left join `user` c
             on a.userId = c.id
             where orderStatus = 2 and b.userid = #{userId}
+    </select>
+
+    <select id="selectPendingorderCount" resultType="integer">
+        SELECT count(1)
+         from orderNew a
+            left join scenic_spot b
+            on a.scenicId = b.id
+            left join `user` c
+            on a.userId = c.id
+            where orderStatus = 2  and b.userid = #{userId}
+    </select>
+
+    <select id="selectAllorder" resultType="com.example.servicescenicspot.entity.Order">
+        SELECT a.id,a.code,a.trade_no,a.userId,a.total,a.time,a.orderStatus,
+        b.name as scenidName,
+        c.username,c.phone
+         from orderNew a
+            left join scenic_spot b
+            on a.scenicId = b.id
+            left join `user` c
+            on a.userId = c.id
+            where orderStatus != 0 and b.userid = #{userId}
     </select>
 
 </mapper>

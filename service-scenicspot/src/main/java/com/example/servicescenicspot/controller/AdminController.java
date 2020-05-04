@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+//@RequestMapping(value="/api")  //部署加上
 public class AdminController {
     @Autowired
     AdminService adminService;
@@ -29,6 +30,24 @@ public class AdminController {
         String userId = BaseUser.getUser(request);
         List<Order> list = adminService.selectPendingOrder(userId);
         Constants.getSuccMsg(result,list);
+        return result;
+    }
+
+    @RequestMapping("selectAllorder")
+    public Map<String,Object> selectAllorder(ServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String userId = BaseUser.getUser(request);
+        List<Order> list = adminService.selectAllorder(userId);
+        Constants.getSuccMsg(result,list);
+        return result;
+    }
+
+    @RequestMapping("selectPendingorderCount")
+    public Map<String,Object> selectPendingorderCount(ServletRequest request){
+        Map<String,Object> result = new HashMap<>();
+        String userId = BaseUser.getUser(request);
+        Integer i = adminService.selectPendingorderCount(userId);
+        Constants.getSuccMsg(result,i);
         return result;
     }
 }

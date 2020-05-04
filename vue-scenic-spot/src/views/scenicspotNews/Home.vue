@@ -5,17 +5,21 @@
             <el-col :span="3">
                 <el-menu :default-active="this.$router.path" class="el-menu-vertical-demo" @open="handleOpen"
                          @close="handleClose" router>
-                    <el-menu-item index="">
+                    <el-menu-item index="manage">
                         <i class="el-icon-menu"></i>
                         <span slot="title">管理</span>
                     </el-menu-item>
                     <el-menu-item index="UnprocessedOrder">
-                        <i class="el-icon-s-order"></i>
-                        <span slot="title">待处理</span>
+                        <el-badge :value="count" class="item">
+                            <i class="el-icon-s-order"></i>
+
+                        <span>待处理</span>
+                        </el-badge>
+
                     </el-menu-item>
-                    <el-menu-item index="/MyMessage">
-                        <i class="el-icon-user-solid"></i>
-                        <span slot="title">我的信息</span>
+                    <el-menu-item index="/orderAll">
+                        <i class="el-icon-s-order"></i>
+                        <span slot="title">订单</span>
                     </el-menu-item>
                 </el-menu>
             </el-col>
@@ -33,7 +37,12 @@
         name: 'scenicspotHome',
         components: {},
         data() {
-            return {}
+            return {
+                count:null,
+            }
+        },
+        mounted(){
+            this.getInfo()
         },
         methods: {
             handleOpen(key, keyPath) {
@@ -41,6 +50,18 @@
             },
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
+            },
+            getInfo(){
+                this.$post('/api/selectPendingorderCount',{})
+                    .then(response => {//成功执行这里
+                        console.log(response)
+                        if(response.data > 0){
+                            this.count = response.data
+                        }
+                    })
+                    .catch(response => {
+                        console.log(response);
+                    });
             },
         }
     }

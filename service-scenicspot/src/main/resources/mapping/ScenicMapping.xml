@@ -35,4 +35,8 @@
     <select id="getScenicPic" resultType="com.example.servicescenicspot.entity.ScenicPic">
         select `id`,pic from pic where otherId = #{id}
     </select>
+
+    <select id="selectScenicByUserId" resultType="com.example.servicescenicspot.entity.Scenic">
+        select * from scenic_spot where userId = #{userId}
+    </select>
 </mapper>

@@ -13,4 +13,6 @@ public interface ScenicService {
     public ScenicDetail getScenicDetail(String id);
 
     public List<ScenicPic> getScenicPic(String id);
+
+    public List<Scenic> selectScenicByUserId(String userId);
 }

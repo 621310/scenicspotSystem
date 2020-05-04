@@ -1,6 +1,6 @@
 <template>
     <div class="touristsHome">
-        <el-menu :default-active="activeIndex"router class="el-menu-demo" mode="horizontal"
+        <el-menu :default-active="activeIndex" router class="el-menu-demo" mode="horizontal"
                 @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
             <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
                 {{ item.navItem }}
@@ -24,7 +24,8 @@
                 navList:[
                     {name:'/scenicList',navItem:'首页'},
                     {name:'/MyOrder',navItem:'我的订单'},
-                    {name:'/MyMessage',navItem:'个人中心'}
+                    {name:'/MyMessage',navItem:'个人中心'},
+                    {name:'/MessageCenter',navItem:'消息中心'},
                 ]
             }
         },

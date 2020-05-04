@@ -7,4 +7,8 @@ import java.util.List;
 public interface AdminService {
 
     List<Order> selectPendingOrder(String userId);
+
+    List<Order> selectAllorder(String userId);
+
+    Integer selectPendingorderCount(String userId);
 }

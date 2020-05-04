@@ -11,4 +11,8 @@ import java.util.List;
 public interface AdminMapper {
 
     List<Order> selectPendingOrder(@Param("userId") String userId);
+
+    List<Order> selectAllorder(@Param("userId") String userId);
+
+    Integer selectPendingorderCount(String userId);
 }
