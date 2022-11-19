@@ -20,7 +20,7 @@
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-router": "^4.0.0",
     "@vue/cli-plugin-vuex": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
+    "@vue/cli-service": "^5.0.8",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "sass": "^1.19.0",
